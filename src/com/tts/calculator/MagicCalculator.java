@@ -10,7 +10,7 @@ public class MagicCalculator extends SimpleCalculator {
 
     public static double sin(double num) {
         //convert degrees to radians
-        num = num * Math.PI / 180;
+ //       num = num * Math.PI / 180;
         return Math.sin(num);
     }
 

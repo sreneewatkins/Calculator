@@ -9,6 +9,11 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static Scanner readInput = new Scanner(System.in);
+    public static double firstNum;
+    public static double secondNum;
+    public static int operation;
+
     public static void main(String[] args) {
 
 
@@ -20,12 +25,6 @@ public class Main {
 
 
     }//end main()
-
-    public static Scanner readInput = new Scanner(System.in);
-
-    public static double firstNum;
-    public static double secondNum;
-    public static int operation;
 
     //get operation input from user ( may move all user interaction to bottom of main)
     public static void getOperationFromUser() {
@@ -66,8 +65,19 @@ public class Main {
                 case (14) -> System.out.println("Come back to crunch the numbers next time");
                 default -> System.out.println("Incorrect Input: Please try again");
             }
+        if(operation != 14) pressEnterToCont();
         }
         while (operation != 14);
+    }
+
+    private static void pressEnterToCont() {
+        System.out.println("\nPress enter to continue");
+        try{
+            System.in.read();
+        }
+        catch(Exception e){
+            //System.out.println();
+        }
     }
 
     //get numbers from user (may move these to bottom of main)
@@ -76,9 +86,18 @@ public class Main {
         firstNum = readInput.nextDouble();
 
         if (mathOperation > 0 && mathOperation < 5) {
-            System.out.println("Enter another number: ");
+            System.out.print("Enter another number: ");
             secondNum = readInput.nextDouble();
         }
+//        while(!choice.equals("q")){
+//            System.out.println("Enter a number or q to quit");
+//            choice = input.next();
+//
+//            if(!choice.equals("q")){
+//                int number = Integer.parseInt(choice);
+//            }
+//        }
+
     }
 
 
